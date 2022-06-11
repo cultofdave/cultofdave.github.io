@@ -131,7 +131,7 @@ Use this as the image path mentioned above.
 
 Each character can have their own blog! First, create a new file in `/posts` and name it beginning
 with the date and time in the following format `YY-MM-DD-title.yml`, e.g. `22-02-22-the-first-meeting.md`.
-Next, at the top of the file, on the first two lines, write two dashes (`---`), and again on the
+Next, at the top of the file, on the first two lines, write three dashes (`---`), and again on the
 next two lines. Between them, write the following: `categories: game-name character-name`.
 For example, Jules Burnbright would write `categories: cloud-gate jules-burnbright`.  
 Finally, the beginning of your file should look like this:
