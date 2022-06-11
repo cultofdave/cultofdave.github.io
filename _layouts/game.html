@@ -1,0 +1,35 @@
+---
+layout: default
+---
+{% assign collection = site.collections | where: 'label', page.collection | first %}
+{% assign homepage = collection.docs | where: 'layout', 'home' | first %}
+{% assign subpages = collection.docs | where: 'layout', 'game' | where_exp: 'item', 'item.hidden != true' %}
+
+{% if homepage.title %}
+<h2>{{ homepage.title }}</h2>
+{% endif %}
+
+{% if homepage.subtitle %}
+<small class='text-muted'>{{ homepage.subtitle }}</small>
+{% endif %}
+
+{% if homepage.title or homepage.subtitle or page.subtitle %}
+<hr class="mx-2">
+{% endif %}
+
+<div class='d-md-flex align-items-start'>
+    {% unless subpages == empty %}
+        <div class='nav flex-md-column nav-pills me-3 mb-3' id='nav-tabs'>
+            <a href='{{ homepage.url | relative_url }}' class='nav-link {% if page.title == homepage.title %}active{% endif %}'>Home</a>
+            {% for subpage in subpages %}
+            {% unless subpage.hidden %}
+            <a href='{{ subpage.url | relative_url }}' class='nav-link {% if page.title == subpage.title %}active{% endif %}'>{{ subpage.title }}</a>
+            {% endunless %}
+            {% endfor %}
+        </div>
+    {% endunless %}
+    <div class='tab-content'>
+        {{ content }}
+    </div>
+
+</div>

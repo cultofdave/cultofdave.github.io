@@ -1,0 +1,55 @@
+Nature: Crusader
+Demeanor: Contrary
+Essence: Dynamic
+Affiliation: Orphan
+Sect: Orphan
+Attributes:
+    Physical:
+        Strength: 2
+        Dexterity: 3
+        Stamina: 3
+    Social:
+        Charisma: 1
+        Manipulation: [4, intimidating]
+        Appearance: 1
+    Mental:
+        Perception: [4, uncanny insight]
+        Intelligence: 2
+        Wits: [4, combat reflexes]
+Abilities:
+    Talents:
+        Alertness: 2
+        Brawl: [4, dirty fighting]
+        Intrigue: 3
+        Intuition: 3
+        Leadership: 3
+        Negotiation: [4, bullying]
+    Skills:
+        Firearms: [4, handguns]
+        Research: 3
+        Stealth: 3
+    Knowledges:
+        Investigation: [4, spotting clues]
+        Politics: 2
+Spheres:
+    Mind: [2, affinity]
+    Spirit: 1
+    Prime: 2
+    Entropy: 1
+Advantages:
+    Arete: 2
+    Willpower: 5
+    Backgrounds:
+        Avatar: 3
+        Certification: 3
+        Spies (Chicago PD): 1
+    Flaws:
+        Enemy: 2
+        Echoes: 2
+    Merits:
+        Acute Senses (eyesight): 1
+Experience:
+    - Arete: 3
+    - Mind: 3
+    - Spirit: 2
+    - Spirit: 3

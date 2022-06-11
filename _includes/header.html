@@ -1,0 +1,44 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ "/" | relative_url }}">{{site.title}}</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <!-- List items for pages outside of any collection -->
+                    {% for doc in site.html_pages %}
+                        {% unless doc.title == site.title or doc.title == nil or doc.hidden == true %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.title == doc.title %}active{%endif%}" {% if page.title == doc.title %}aria-current="page"{%endif%} href="{{ doc.url | relative_url }}">{{ doc.title }}</a>
+                        </li>
+                        {% endunless %}
+                    {% endfor %}
+
+                    <!-- List homepages for collections -->
+                    {% for collection in site.collections %}
+                        
+                        {% assign homepage = collection.docs | where: "layout", "home" | first %}
+                        {% assign collection-name = homepage.title | slugify %}
+
+                        {% unless homepage.title == nil %}
+                        <script>console.log('{{ collection-name }}');</script>
+                        <li class="nav-item">
+                            <a class="nav-link {% if page.collection == collection-name %}active{% endif %}" {% if page.title == homepage.title %}aria-current="page"{% endif %} href="{{ homepage.url | relative_url }}">{{ homepage.title }}</a>
+                        </li>
+                        {% endunless %}
+                        
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {% unless page.collection == nil %}
+
+        {% include game-header.html %}
+
+    {% endunless %}
+
+</header>

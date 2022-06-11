@@ -1,0 +1,38 @@
+---
+layout: page
+---
+{% assign page-name=page.title | slugify %}
+
+<div class='d-md-flex align-items-start'>
+    <div id='sheet' class='flex-md-column mb-3 me-3'></div>
+    
+    <div class='flex-md-column'>
+        {{ content }}
+        {% if site.categories contains page-name %}
+        <h3>Blog</h3>
+        {% endif %}
+        {% for post in site.posts %}
+            {% if post.categories contains page.collection and post.categories contains page-name %}
+                <h4 class="mb-0">{{post.title}}</h4>
+                <small class="text-muted">{{post.date | date_to_long_string: "ordinal"}}</small>
+                {{post.content}}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<script type='module'>
+    import * as yaml from '/assets/js/js-yaml.mjs';
+    import create from '/assets/js/sheet.js';
+
+    fetch('/assets/character-sheets/{{ page.collection }}/{{ page-name }}.yml').then(response => {
+        if (!response.ok) {
+            console.error(`Character sheet {{ page-name }}.yml not found!`);
+        } else {
+            return response.text()
+        }
+    }).then(charRaw => {
+        var charSheet = yaml.load(charRaw);
+        create(charSheet);
+    });
+</script>

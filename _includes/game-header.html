@@ -1,0 +1,23 @@
+{% assign collection = site.collections | where: 'label', page.collection | first %}
+{% assign homepage = collection.docs | where: 'layout', 'home' | first %}
+
+<nav class='navbar navbar-expand-md {% if collection.header-style == 'dark' %}navbar-dark{% endif %}' style='background-color: {{ collection.colour }};'>
+    <div class='container-fluid'>
+        <a class='navbar-brand' href='{{ homepage.url | relative_url }}'>{{ homepage.title }}</a>
+        <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#gameNavbar' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+            <span class='navbar-toggler-icon'></span>
+        </button>
+        <div class='collapse navbar-collapse' id='gameNavbar'>
+            <ul class='navbar-nav me-auto mb-2 mb-md-0'>
+
+                {% for doc in collection.docs %}
+                    {% if doc.layout == 'character' %}
+                    <li class='nav-item'>
+                        <a class='nav-link {% if page.title == doc.title %}active{% endif %}' {% if page.title == doc.title %}aria-current='page'{% endif %} href='{{ doc.url | relative_url }}'>{{ doc.title }}</a>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</nav>

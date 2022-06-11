@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% if page.title %}
+<h2>{{ page.title }}</h2>
+{% endif %}
+
+{% if page.subtitle %}
+<small class="text-muted">{{ page.subtitle }}</small>
+{% endif %}
+
+{% if page.title or page.subtitle %}
+<hr class="mx-2">
+{% endif %}
+
+{{ content }}
