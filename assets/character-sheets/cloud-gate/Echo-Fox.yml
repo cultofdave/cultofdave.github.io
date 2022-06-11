@@ -1,0 +1,59 @@
+
+
+Nature: Wounded
+Demeanor: Measured
+Essence: Primordial
+Affiliation: Li Hai
+Sect: Akashic
+Attributes:
+    Physical:
+        Strength: 3
+        Dexterity: [4, Nimble]
+        Stamina: 3
+    Social:
+        Charisma: 3
+        Manipulation: 2
+        Appearance: 1
+    Mental:
+        Perception: 1
+        Intelligence: 3
+        Wits: [4, Fox Witted]
+Abilities:
+    Talents:
+        Alertness: 3
+        Athletics: 3
+        Emptahy: 3
+        Expression: 3
+        Subterfuge: 1
+    Skills:
+        Etiquette: 1
+        Martial Arts: [2, Do]
+        Meditation: 2     
+    Knowledges:
+        Academics: 2
+        Law: [4, courts + procedures]
+        Medicine: 3      
+Spheres:
+    Life: [3, affinity]
+    Prime: 3
+    Mind: 0
+Advantages:
+    Arete: 3
+    Willpower: 5
+    Backgrounds:
+        Certification: [4, BAR]
+        Past Lives: 2
+        Avatar: 3
+        Contacts: 1
+        Resources: [4, car collection]
+        Destiny: 0
+    Flaws:
+        Echoes: 2
+
+Experience:
+    - Mind: 2
+    - Martial Arts: 3
+    - Meditation: 3
+    - Past Lives: 4
+    - Destiny: 3
+
